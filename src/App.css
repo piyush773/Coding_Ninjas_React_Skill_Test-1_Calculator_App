@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    height: 100vh;
+    background-image: linear-gradient(-225deg, #20E2D7 0%, #F9FEA5 100%);
+}
+h2{
+    color: rgb(102, 102, 102);
+    text-align: center;
+    margin-top: 1.8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* grid layout styling */
+.calculator-grid{
+    display: grid;
+    place-content: center;
+    margin-top: 1rem;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(5.6rem, auto) repeat(5, 4.5rem);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ /* calculator display unit styling */
+.display-unit{
+    grid-column: 1 / 5;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: 3px groove #ff758c;
+    outline: none;
+}
+.display-unit .prev-operand{
+    color: rgb(42, 42, 42);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.display-unit .curr-operand{
+    color: rgb(19, 18, 18);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* calculator buttons styling */
+.calculator-grid > button{
+    cursor:pointer;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgb(255, 255, 255);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* common color for buttons */
+.btn-clr{
+    /* background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%); */
+    background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
 }
+.btn-clr:hover,
+.btn-clr:focus{
+    background: #000;
+} 
