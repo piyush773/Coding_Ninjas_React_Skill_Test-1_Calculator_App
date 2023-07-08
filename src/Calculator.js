@@ -6,7 +6,7 @@ export const Calculator = () => {
   const [previousOperand, setPreviousOperand] = useState(null);
   const [operation, setOperation] = useState(null);
   const [overwrite, setOverwrite] = useState(false);
-
+ 
   // Clear the calculator
   const clear = () => {
       setCurrentOperand(null);
